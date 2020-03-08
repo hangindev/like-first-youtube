@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      html,
+      body {
+        background-color: #f5f5f5;
+      }
+      body {
+        font-size: 16px;
+        font-family: "Arial", "文泉驛正黑", "WenQuanYi Zen Hei", "儷黑 Pro",
+          "LiHei Pro", "微軟正黑體", "Microsoft JhengHei", sans-serif;
+        padding: 5rem 1rem;
+        color: rgba(0, 0, 0, 0.87);
+      }
+      header {
+        margin-bottom: 3rem;
+      }
+      h1 {
+        font-size: 3rem;
+      }
+      h2 {
+        margin-bottom: 2rem;
+      }
+      small {
+        color: #999;
+        font-size: 0.6em;
+      }
+      .youtube {
+        color: #c00;
+      }
+      fieldset {
+        border: none;
+        margin: 0;
+        padding: 0;
+      }
+      button {
+        font-size: 1.1rem;
+        padding: 0.2rem 0.5rem;
+        margin-right: 1rem;
+      }
+      label {
+        margin-right: 0.25rem;
+      }
+      textarea {
+        background-color: white;
+        resize: none;
+        padding: 0.2rem;
+      }
+      textarea:disabled {
+        background-color: white;
+      }
+      input[type="number"] {
+        width: 48px;
+        padding: 0.2rem;
+      }
+      .ctn {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      .row {
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.25rem;
+      }
+      .row.withHelper {
+        margin-bottom: 1.75rem;
+      }
+      .row .helper {
+        position: absolute;
+        left: 0;
+        bottom: -1.2rem;
+      }
+      .field {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        margin-right: 0.5rem;
+      }
+      .field:last-child {
+        margin-right: 0;
+      }
+      .field label {
+        margin-bottom: 0.25rem;
+      }
+      #Status {
+        opacity: 1;
+      }
+      #Status.hide {
+        opacity: 0;
+        transition: opacity 0.3s ease-out;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ctn">
+      <header>
+        <h1>
+          Like First
+          <small>
+            Leave positive footprint
+          </small>
+        </h1>
+      </header>
+      <h2 class="youtube">
+        Youtube
+      </h2>
+      <form action="/" method="post" id="OptionForm">
+        <fieldset>
+          <div class="row">
+            <label for="subscribedOnly">Subscribed only</label>
+            <input type="checkbox" id="subscribedOnly" name="subscribedOnly" />
+          </div>
+          <div class="row withHelper">
+            <div class="field">
+              <label for="includeIds">Whitelist channel IDs:</label>
+              <textarea id="includeIds" rows="10"> </textarea>
+            </div>
+            <div class="field">
+              <label for="excludeIds">Blacklist channel IDs:</label>
+              <textarea id="excludeIds" rows="10"> </textarea>
+            </div>
+            <small class="helper">
+              Separate IDs with commas or line breaks
+            </small>
+          </div>
+          <div class="row">
+            <div class="field">
+              <label for="minDuration">Miinimum play duration (sec)</label>
+              <input
+                type="number"
+                id="minDuration"
+                name="minDuration"
+                min="0"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <button type="submit">Save</button>
+            <p id="Status" class="hide">Saved!</p>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </body>
+  <script src="options.js"></script>
+</html>

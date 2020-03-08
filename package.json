@@ -1,0 +1,22 @@
+{
+  "name": "like-first-youtube",
+  "version": "1.0.0",
+  "description": "A Like-first extension for Youtube. Leave a positive footprint, like first!",
+  "scripts": {
+    "build": "webpack"
+  },
+  "keywords": [
+    "like first",
+    "youtube",
+    "chrome extension"
+  ],
+  "author": "Jason <hangindev@gmail.com> (https://hangindev.com/)",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "lodash.throttle": "^4.1.1"
+  }
+}
