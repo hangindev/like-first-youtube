@@ -1,6 +1,6 @@
 {
-  "name": "Like first: youtube edition",
-  "version": "0.0.1",
+  "name": "Like First: youtube edition",
+  "version": "0.0.2",
   "description": "A Like-first extension for Youtube. Leave a positive footprint, like first!",
   "permissions": ["storage"],
   "options_page": "options.html",

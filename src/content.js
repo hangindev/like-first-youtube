@@ -35,14 +35,13 @@ const getChannelId = () =>
 const getVideoId = () => new URLSearchParams(window.location.search).get("v");
 
 async function main() {
-  console.log("Init.");
   // if not in the watch page, do nothing
   if (!document.location.href.startsWith("https://www.youtube.com/watch")) {
-    return console.log("Not watch page");
+    return;
   }
   // if user logged out, do nothing
   if ($(selector.signIn)) {
-    return console.log("Not sign in");
+    return;
   }
   // save videoId before all async tasks
   const videoId = getVideoId();
@@ -59,7 +58,7 @@ async function main() {
     await waitUntilElements([selector.video, selector.like, selector.dislike]);
     // if the user has already rated the video, ciao
     if (buttonIsPressed(selector.like) || buttonIsPressed(selector.dislike)) {
-      return console.log("Rated!");
+      return;
     }
 
     const channelId = getChannelId();
@@ -74,7 +73,7 @@ async function main() {
     ) {
       return;
     }
-    console.log({excludeIds, channelId})
+    
     if (excludeIds.length > 0 && excludeIds.includes(channelId)) {
       return;
     }
@@ -97,6 +96,5 @@ async function main() {
   }
 }
 $(selector.app).addEventListener("yt-page-data-updated", () => {
-  console.log("yt-page-data-updated");
   main();
 });
